@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Raymond Perez">
+	<title>Orange Recipies</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../Resources/Images/icon-orange.ico">
+	<link rel="stylesheet" type="text/css" href="../css-files/orange-recipes.css">
+	<link rel="stylesheet" type="text/css" href="../css-files/coolClassroom.css">
+	<link rel="stylesheet" type="text/css" href="../css-files/util.css">
+	<script type="text/javascript" src="../js-files/util.js" ></script>
+	<script type="text/javascript">
+	function ValidURL(addressID) {
+		console.log("validating URL...");
+		var str = document.getElementById(addressID).value;
+	  var pattern =/^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/; // fragment locater
+	  if(!pattern.test(str)) {
+	    alert("Please enter a valid URL.");
+	    console.log("...Failed.")
+	    return false;
+	  } else {
+	  	console.log("...Success.")
+	    return true;
+	  }
+	}
+
+	function isStrEmpty(str){
+			if (str.replace(/\s/g, "").length == 0){
+				return true;
+			}else{ 
+				return false;
+			}
+	}
+
+
+	function myValidateForm(){
+		if(ValidURL("recipeAddress")){
+				return addURL();		
+		}
+			
+	}
+
+	function addURL(){
+			console.log("adding URL...")
+			var r = document.createElement("a");
+			var title = document.getElementById("recipeName").value;
+
+			if(isStrEmpty(title)){
+				console.log("...Failed: empty recipe name.");
+				alert("You must add a name for your recipe");
+				return false
+			}
+
+			var address = document.getElementById("recipeAddress").value;
+			var des = document.createTextNode(title);
+
+			r.appendChild(des);
+			r.href = address;
+			r.title = title;
+
+			var item = document.createElement("LI");
+			item.appendChild(r);
+
+			var list = document.getElementById("recipe-links");
+			list.appendChild(item);
+
+			console.log("... URL added to the list.")
+			alert("your recipes has been added!");
+
+		
+
+		
+	}
+	</script>
+
+</head>
+<body>
+	<header>
+		<audio id="coinSound"  src="../Resources/Music/8-Bit-Coin-sound-effect.mp3" ></audio>
+		<nav >
+			<!--
+			Fill in the navigation bar with links reffering to your #sectionId
+			-->
+			<a class="fancyButton" href="landing-page.html" 
+				onmouseenter="playSound('coinSound')" 
+				onmouseleave="stopSound('coinSound')">Landing</a> 
+			<a class="fancyButton" href="main-page.html#top" 
+				onmouseenter="playSound('coinSound')" 
+				onmouseleave="stopSound('coinSound')">TOP</a>
+			<a class="fancyButton" href="orange-recipes.html" 
+				onmouseenter="playSound('coinSound')" 
+				onmouseleave="stopSound('coinSound')">Orange Recipies</a>
+				<a class="fancyButton" href="main-page.html#gizoogle" 
+				onmouseenter="playSound('coinSound')" 
+				onmouseleave="stopSound('coinSound')">Gizoogle</a>
+			<a class="fancyButton" href="disclaimer.html" 
+				onmouseenter="playSound('coinSound')" 
+				onmouseleave="stopSound('coinSound')">Disclaimer</a>
+
+			
+		</nav>
+	</header>
+
+<main>
+	
+<section id="recipes.list">
+	<h1>Welcome to the Orange Recipies!</h1>
+	<h2>It's all about them oranges</h2>
+	<p>Hello everyone! this is a list to links of orange recipies!<br>
+	Remember to be nice! </p>
+	<section id="recipes.links">
+		<ul id="recipe-links">
+			<li><a href="http://allrecipes.com/recipe/61024/asian-orange-chicken/?internalSource=hub%20recipe&referringId=1295&referringContentType=recipe%20hub&clickId=cardslot%203">Asian Orange Chicken!! Yum!</a></li>
+		</ul>
+		
+	</section>
+	<section id="recipes.form">
+		 <h3 class="center">Fill out this form to add a recipe to the list!</h3>
+                
+                <!-- old form 
+                <form id="addtogroup_form" name="addtogroup_form">
+                        <fieldset  id="fieldsName" name="fieldsName">
+                            <label for="recipeName" id="recipeName">First Name:</label>
+                            <input type="text" id="recipeName" name="recipeName"  onchange="validateForm();" required/>
+                        </fieldset>
+	                    <fieldset id="link.url" name="link.url">
+	                        <label for="recipeAddress" id="labelRecipeAddress">Recipie URL:</label>
+	                        <input type="text" name="recipeAddress" id="recipeAddress" onchange="ValidURL();" required>
+	                        
+	                    </fieldset>
+                    	<fieldset class="center" id="btnsFields" name="btnsFields">
+                        <button type="button" id="btnAddrecipe" name="btnAddrecipe" onclick="addStudent();">Add Recipe!</button>
+                    </fieldset>
+              </form>
+              -->
+
+              <form id="add-repcipes-form" onsubmit="">
+              	<fieldset>
+              		<label for="recipeName" id="labelRecipeName">Recipe Name:</label>
+                    <input type="text" id="recipeName" name="recipeName"  required/>
+              	</fieldset>
+
+              	<fieldset>
+              		<label for="recipeAddress" id="labelRecipeAddress">Recipe URL:</label>
+	                <input type="url" name="recipeAddress" id="recipeAddress" pattern="https?://.+" required/>
+              	</fieldset>
+
+              	<fieldset>
+              		<button type="reset" name="SUBMIT-button" value="SUBMIT" onclick="myValidateForm()">SUBMIT</button>
+              	</fieldset>
+
+
+              </form>
+
+	</section>
+
+</section>
+
+
+
+</main>
+
+
+
+</body>
+</html>

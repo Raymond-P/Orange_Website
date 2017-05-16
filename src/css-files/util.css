@@ -1,0 +1,53 @@
+.fancyButton{
+	background-color: orange;
+	border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.fancyButton:hover{
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.centeredX{
+	position: fixed;
+	left: 45%;
+}
+
+.centeredY{
+	top: 45%;
+}
+
+#top{
+	border-color: #33cc33;
+}
+
+nav{
+	position: fixed;
+	display: block;
+	padding-bottom: 0px;
+	background-color: #ffcc00;
+	border-style: groove;
+	border-color: green;
+}
+nav.groovy{
+	border-style: groove;
+}
+main{
+	padding-top: 40px;
+	border-color: #33cc33;
+}
+
+iframe{
+	
+}
+
+td,th,table.groovy{
+	border-style: groove;
+}

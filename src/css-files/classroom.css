@@ -1,0 +1,54 @@
+h2{
+	color: blue;
+}
+h1,h2,h3,h4,h5{
+	text-align: center;
+    color: crimson;
+}
+nav{
+	background-color: #cccccc;
+}
+nav a{
+	text-decoration: none;
+	font-weight: bold;
+	color: red;
+}
+nav li{
+	list-style-type: none;
+	display: inline;
+	padding: 3em; 
+}
+
+img{
+	max-width: 100%
+
+}
+
+ul.frog li{
+	background: url(../Resources/Images/frogIcon.png);
+	background-repeat: no-repeat;
+	padding-left: 45px;
+}
+
+
+.center{
+	text-align: center;
+}
+
+body{
+	color: #444444;
+	background-color: #FFCCCC;
+}
+header{
+
+}
+footer{
+	font-size: .7em;
+	text-align: center;
+	display: block;
+	background-color: darkgrey;
+	color: #FFFFFF;
+	padding-top: .5em;
+	letter-spacing: .2em;
+	word-spacing: .2em;
+}

@@ -1,0 +1,37 @@
+
+
+html{
+  background-image: url("../Resources/Images/galactic_background.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+
+}
+body{
+  height: 100%;
+  margin-top: 0;
+  margin: dotted green;
+  position: absolute;
+
+
+}
+p,h1{
+  color: white;
+  text-align: center;
+
+}
+
+
+
+#hero,.hero{
+  padding-top: 10%;
+  position: fixed;
+}
+
+#hero-overlay,.hero-overlay{
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  height: 100%;
+}
+
